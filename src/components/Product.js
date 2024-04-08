@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 const Product = (props) => {
   // "/prod/:item"
   let { id } = useParams();
-  // !item ? ({item=0});
+  // find() is important!! (this is DIFFERENT from database find)
   let myData = props.vData.find((x) => {
     return x.id == id;
   });
