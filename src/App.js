@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./assets/css/style.scss";
+import { Routes, Route, NavLink } from "react-router-dom";
+import { vData, vData1 } from "./data.js";
+import Header from "./layout/Header.js";
+import Footer from "./layout/Footer.js";
+import Main from "./layout/Main.js";
+import Company from "./components/Company.js";
+import Product from "./components/Product.js";
+import Community from "./components/Community.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main vData={vData} />} />
+        <Route path="/com" element={<Company />} />
+        <Route path="/prod/:id" element={<Product vData={vData} />} />
+        <Route path="/comm" element={<Community />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 

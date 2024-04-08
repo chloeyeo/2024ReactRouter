@@ -1,0 +1,132 @@
+@use "reset";
+
+$primary-color: skyblue;
+$light: white;
+$shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+html,
+body {
+  height: 200vh;
+}
+body {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+.d-flex {
+  display: flex;
+}
+
+.visual,
+.subVisual {
+  height: 300px;
+  background: rgb(155, 175, 183);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $light;
+  box-shadow: $shadow;
+  width: 100%;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+.topMenu {
+  // if you add _ it won't work. so you know you can delete all with _ later
+  _background: blue;
+  li {
+    height: 100%;
+  }
+  a {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    &.active {
+      background: $primary-color;
+    }
+  }
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 40px;
+  display: flex;
+  // background-color: $primary-color;
+  justify-content: space-between;
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    // background: skyblue;
+    height: 100%;
+    li {
+      height: 100%;
+    }
+    a {
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 0 16px;
+      &.active {
+        background: pink;
+      }
+    }
+  }
+}
+
+.section {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.subproduct {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  // margin-bottom: 20px;
+  h3 {
+    padding: 10px 0;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  .content {
+    padding: 30px;
+  }
+}
+
+.prodList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  li {
+    width: 20%;
+    flex: 1 0 auto; // 1 is grow, 0 is shrink, auto is basis (initial size).
+    background-color: pink;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.footer {
+  background: $light;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  box-shadow: $shadow;
+  width: 100%;
+  left: 0;
+}
